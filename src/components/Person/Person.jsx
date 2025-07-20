@@ -2,11 +2,13 @@ export const Person = ({ person }) => (
   <section className="Person">
     <h2 className="Person__name">{`My name is ${person.name}`}</h2>
 
-    {person.age && <p className="Person__age">{`I am ${person.age}`}</p>}
+    {person.age && (
+      <p className="Person__age">{`I am ${person.age} years old`}</p>
+    )}
 
     <p className="Person__partner">
-      {person.isMarried && person.partnerName
-        ? `${person.partnerName} is my ${person.sex === 'm' ? 'wife' : 'husband'}`
+      {person.isMarried
+        ? `${person.partnerName || 'Partner'} is my ${person.sex === 'm' ? 'wife' : 'husband'}`
         : 'not married'}
     </p>
   </section>
